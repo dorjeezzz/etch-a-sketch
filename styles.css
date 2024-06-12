@@ -5,8 +5,11 @@
 #container {
     display: flex;
     flex-direction: row;
-    
+    max-width: 850px;
+    /* max-height: 800px; */
+    /* display: block; */
     /* background-color: red; */
+    flex-wrap: wrap;
 }
 
 .square {
