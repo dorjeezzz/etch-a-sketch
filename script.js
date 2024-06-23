@@ -1,6 +1,6 @@
 let container = document.querySelector("#container");
 const cool = "black";
-
+let arr = []
 function create(n){
     for (let i = 0; i < n; i++){
         for (let j = 0; j < n; j++){
@@ -14,15 +14,20 @@ function create(n){
     }
 }
 
-let dimensions;
 let btn = document.querySelector("#change_d");
 btn.addEventListener("click", (e)=>{
-    dimensions = prompt("Input Squares per Side");
+    let dimensions = prompt("Input Squares per Side");
+    if (dimensions >= 100) dimensions == 100;
+    deleteGrid();
+    create(dimensions);
 })
 
 function deleteGrid(){
-    if (dimensions){
-        //delete the grid
-    }
-    else return;
+    arr.forEach((square) => {
+        container.removeChild(square);
+        square.remove();
+    });
+    arr = [];
 }
+
+create(16);
